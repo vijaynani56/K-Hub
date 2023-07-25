@@ -1,20 +1,17 @@
-const express = require('express')
-const cors = require('cors')
-const app = express()
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-app.use(express.json())
-app.use(cors())
-const PORT = 5000
-app.listen(PORT, () => {
-    console.log(`Server is running on PORT ${PORT}...`)
-})
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
-const mongoose = require('mongoose')
-mongoose.connect('mongodb://0.0.0.0:27017/K-HUB',{
-    useNewUrlParser: true,
-     useUnifiedTopology: true,
-}).then(()=>{
-    console.log("database connected")
-})
-
-
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
